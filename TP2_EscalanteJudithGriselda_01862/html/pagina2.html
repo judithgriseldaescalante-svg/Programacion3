@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <title>Inscripción</title>
+</head>
+<body>
+    <div>
+        <h1>DEPORTES UNCA</h1>
+    </div>
+    <hr>
+
+    <nav class="container">  
+        <div id="menu_navegacion">
+            <ul class="nav flex-column flex-md-row justify-content-md-center">
+                <li class="nav-item">
+                    <a href="pagina1.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Registrarse</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pagina1.html#actividadeportiva" class="nav-link">Actividades deportivas</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="menuInscripcion" role="button" data-bs-toggle="dropdown">Inscribirse a una actividad</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pagina1.html#inscripcionfutbol" class="dropdown-item">Futbol</a></li>
+                        <li><a href="pagina1.html#inscripcionbasquet" class="dropdown-item">Basquet</a></li>
+                        <li><a href="pagina1.html#inscripcionvoley" class="dropdown-item">Voley</a></li>
+                        <li><a href="pagina1.html#inscripcionatletismo" class="dropdown-item">Atletismo</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="inscripciones.html" class="nav-link">Mis inscripciones</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Cancelar suscripcion</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Iniciar sesion</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <hr>
+
+    <main class="container my-5">
+        <h2 id="titulo-inscripcion" class="text-center"><em>Formulario de inscripción</em></h2>
+        
+        <form action="pagina3.html" method="post" class="tarjeta-deporte p-4 rounded">
+            
+            <fieldset class="mb-4">
+                <legend class="h5 border-bottom pb-2">Informacion de la actividad</legend>
+                <div class="mb-3">
+                    <label class="form-label" for="actividad">Actividad:</label>
+                    <input type="text" class="form-control" id="actividad" value="Básquet" disabled>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="lugar">Lugar:</label>
+                    <input type="text" class="form-control" id="lugar" value="Cancha con iluminación" disabled>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="dias">Días:</label> 
+                    <input type="text" class="form-control" id="dias" value="Lunes y martes" disabled>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="horario">Horario:</label>
+                    <input type="text" class="form-control" id="horario" value="21:00 - 00:00" disabled>
+                </div>
+            </fieldset>
+            
+            <fieldset class="mb-4">
+                <legend class="h5 border-bottom pb-2">Datos del participante</legend>
+                <div class="mb-3">
+                    <label class="form-label" for="nombre">Apellido y nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" maxlength="100" placeholder="Máximo de 100 caracteres" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="dni">DNI:</label>
+                    <input type="number" class="form-control" id="dni" name="dni" min="10000000" max="99999999" placeholder="Ocho dígitos" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="fecha-nacimiento">Fecha de nacimiento:</label>
+                    <input type="date" class="form-control" id="fecha-nacimiento" name="fecha-nacimiento">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="correo">Correo electrónico:</label> 
+                    <input type="email" class="form-control" id="correo" name="correo" placeholder="correo@ejemplo.com">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="telefono">Teléfono:</label>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" maxlength="15">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label d-block">Sexo:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="Femenino" name="sexo" id="sexoF">
+                        <label class="form-check-label" for="sexoF">Femenino</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="No binario" name="sexo" id="sexoNB">
+                        <label class="form-check-label" for="sexoNB">No binario</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="Masculino" name="sexo" id="sexoM">
+                        <label class="form-check-label" for="sexoM">Masculino</label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="mb-4">
+                <legend class="h5 border-bottom pb-2">Informacion deportiva</legend>
+                <div class="mb-3">
+                    <label class="form-label" for="nivel">Nivel:</label>
+                    <select name="nivel" id="nivel" class="form-select">
+                        <option>Inicial</option>
+                        <option>Intermedio</option>
+                        <option>Avanzado</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label d-block">¿Posee experiencia previa?:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="experiencia" value="si" id="expSi">
+                        <label class="form-check-label" for="expSi">Si</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="experiencia" value="no" id="expNo">
+                        <label class="form-check-label" for="expNo">No</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="observaciones">Observaciones:</label>
+                    <textarea class="form-control" id="observaciones" name="observaciones" rows="4" placeholder="Agrega información adicional que consideres que debamos saber."></textarea>
+                </div>
+            </fieldset>
+            <div class="mb-4 form-check">
+                <input type="checkbox" class="form-check-input" id="terminos" required>
+                <label class="form-check-label" for="terminos">Acepto las condiciones de inscripción</label>
+            </div>
+            <button type="submit" class="btn boton-deporte">Aceptar</button>
+            <button type="reset" class="btn btn-secondary">Cancelar</button> 
+        </form>
+    </main>
+    <footer>Deportes Unca - 2026</footer>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>

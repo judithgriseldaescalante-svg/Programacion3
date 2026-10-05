@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscricion</title>
+</head>
+<body>
+    <h1>
+        <em>Formulario de inscripción</em>
+    </h1>
+    <form action="pagina3.html" method="post">
+        <fieldset>
+            <legend>
+                Informacion de la actividad
+            </legend>
+        
+                <label>
+                    Actividad: 
+                </label>
+                <input type="text" value="Basquet" disabled>
+                <br><br>
+                <label>
+                    Lugar: 
+                </label>
+                <input type="text" value="cancha con iluminacion" disabled>
+                <br><br>
+                <label>Dias: </label> 
+                <input type="text" value="Lunes y Martes" disabled> <br><br>
+                <label>Horario: </label>
+                <input type="text" value="21:00 - 00:00" disabled>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Datos del participante</legend>
+            <label >Apellido y Nombre: </label>
+            <input type="text" maxlength="100" placeholder="Maximo de 100 caracteres" required> <br><br>
+            <label>DNI: </label>
+            <input type="text" maxlength="8" required> <br><br>
+            <label>Fecha de nacimiento: </label>
+            <input type="date" required> <br><br>
+            <label> Correo electronico: </label> 
+            <input type="email" placeholder="                       @gmail.com">
+            <br><br>
+            <label>Telefono: </label>
+            <input type="tel" maxlength="10"><br><br>
+            <label>Sexo: </label>
+            <input type="radio" value="Femenino" name="sexo">
+            <label>Femenino</label>
+            <input type="radio" value="No binario" name="sexo">
+            <label>No binario</label>
+            <input type="radio" value="Masculino" name="sexo">
+            <label>Masculino</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>
+                Informacion deportiva
+            </legend>
+            <label>Nivel: </label>
+            <select name="nivel">
+                <option>Inicial</option>
+                <option>Intermedio</option>
+                <option>Avanzado</option>
+            </select>
+            <br><br>
+            <label>¿Posee experiencia previa?: </label>
+            <input type="radio" name="experiencia" value="si">
+            <label>Si</label>
+            <input type="radio" name="experiencia" value="no">
+            <label>No</label> <br><br>
+            <label>Informacion adicional: </label>
+            <textarea rows="5" cols="30" placeholder="Agrega informacion adicional que consideres que debamos saber."></textarea>
+        </fieldset>
+        <br>
+        <label>Acepto los terminos y condiciones </label>
+        <input type="checkbox" required> <br><br>
+        <button type="submit"> Aceptar </button>
+        <button type="reset">Cancelar</button> 
+    </form>
+    <br>
+    <footer>Deportes Unca - 2026</footer>  
+</body>
+</html>

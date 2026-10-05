@@ -1,0 +1,150 @@
+body {
+    background: linear-gradient(to right, #5a81a6, #264363);
+    color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+h1, h2 {
+    padding-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+hr {
+    border-top: 1px solid #86cdd1;
+    opacity: 0.3;
+}
+nav {
+    margin: 4px;
+}
+.nav-link {
+    color: black !important;
+}
+.nav-link:hover {
+    color: rgb(117, 116, 121) !important;
+}
+.imagen_deporte {
+    width: 300px;
+    height: 300px;
+    margin-top: 15px;
+}
+ol li {
+    background-color: rgba(0, 0, 0, 0.15); 
+    border-radius: 20px; 
+    padding: 20px;
+    margin-bottom: 40px;
+}
+ol li ul {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+main a {
+    color: #475ae6;
+    text-decoration: none;
+    font-weight: bold;
+}
+main a:hover {
+    color: #ffffff;
+    text-decoration: underline; 
+}
+footer {
+    text-align: center;
+    background-color: #1a2d42;
+    padding: 20px;
+    color: white;
+    margin-top: 50px;
+}
+#titulo-inscripcion,
+#titulo-inscripciones {
+    margin-bottom: 25px;
+}
+.tarjeta-deporte,
+.tabla-contenedor {
+    background-color: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(134, 205, 209, 0.5);
+    border-radius: 20px;
+    padding: 25px;
+}
+.tarjeta-deporte fieldset {
+    border: 1px solid rgba(242, 242, 242, 0.35);
+    border-radius: 10px;
+    padding: 20px;
+}
+.tarjeta-deporte legend {
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+}
+.tarjeta-deporte label,
+.tabla-inscripciones th {
+    font-weight: bold;
+}
+.tarjeta-deporte input:focus,
+.tarjeta-deporte select:focus,
+.tarjeta-deporte textarea:focus {
+    background-color: #e4f7f8;
+    border-color: #86cdd1;
+    box-shadow: 0 0 0 0.2rem rgba(134, 205, 209, 0.35);
+}
+.boton-deporte {
+    background-color: #86cdd1;
+    border: 1px solid #86cdd1;
+    color: #1a2d42;
+    font-weight: bold;
+}
+.boton-deporte:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #1a2d42;
+}
+.tabla-inscripciones {
+    margin-bottom: 0;
+    text-align: center;
+}
+.tabla-inscripciones thead {
+    background-color: #1a2d42;
+    color: #ffffff;
+}
+.tabla-inscripciones td,
+.tabla-inscripciones th {
+    vertical-align: middle;
+}
+@media (max-width: 767px) {
+    nav.container {
+        width: 100%;
+    }
+    .tarjeta-deporte,
+    .tabla-contenedor,
+    .tarjeta-deporte fieldset {
+        padding: 15px;
+    }
+    .tabla-inscripciones,
+    .tabla-inscripciones tbody,
+    .tabla-inscripciones tr,
+    .tabla-inscripciones td {
+        display: block;
+        width: 100%;
+    }
+    .tabla-inscripciones thead {
+        display: none;
+    }
+    .tabla-inscripciones tr {
+        background-color: rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(134, 205, 209, 0.5);
+        border-radius: 12px;
+        margin-bottom: 18px;
+        padding: 10px;
+    }
+    .tabla-inscripciones td {
+        align-items: center;
+        border: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 9px 5px;
+        text-align: right;
+    }
+    .tabla-inscripciones td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-right: 15px;
+        text-align: left;
+    }
+}
