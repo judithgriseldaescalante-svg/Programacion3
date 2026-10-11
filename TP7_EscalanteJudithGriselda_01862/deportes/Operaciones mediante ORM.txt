@@ -1,0 +1,110 @@
+======================================================================
+TRABAJO PRACTICO N7
+======================================================================
+
+# Importacion
+>>> from reservas.models import ActividadDeportiva
+
+----------------------------------------------------------------------
+1. Crear y guardar al menos tres actividades deportivas
+----------------------------------------------------------------------
+# Actividad 1: Futbol
+>>> ActividadDeportiva.objects.create(nombre="Futbol", descripcion="Cancha techada", lugar="Sede Central", cupo=20)
+<ActividadDeportiva: Futbol>
+
+# Actividad 2: Basquet
+>>> ActividadDeportiva.objects.create(nombre="Basquet", descripcion="Forma tu equipo y ven a disfrutar del basquet.", lugar="Cancha con iluminación", cupo=5)
+<ActividadDeportiva: Basquet>
+
+# Actividad 3: Voley
+>>> ActividadDeportiva.objects.create(nombre="Voley", descripcion="Súmate a la red y demuestra tus reflejos.", lugar="Cancha techada", cupo=13)
+<ActividadDeportiva: Voley>
+
+----------------------------------------------------------------------
+4. Consultar y mostrar todas las actividades deportivas registradas
+----------------------------------------------------------------------
+>>> ActividadDeportiva.objects.all()
+<QuerySet [<ActividadDeportiva: Futbol>, <ActividadDeportiva: Basquet>, <ActividadDeportiva: Voley>]>
+
+----------------------------------------------------------------------
+2. Crear y guardar al menos dos horarios para una actividad deportiva
+----------------------------------------------------------------------
+# Importación del modelo Horario
+>>> from reservas.models import Horario
+
+# Recuperar la actividad deportiva basquet
+>>> basquet = ActividadDeportiva.objects.get(nombre="Basquet")
+
+# Horario 1: Lunes
+>>> h1 = Horario.objects.create(actividad=basquet, dia="Lunes", hora_inicio="21:00", hora_fin="00:00")
+
+# Horario 2: Martes
+>>> h2 = Horario.objects.create(actividad=basquet, dia="Martes", hora_inicio="21:00", hora_fin="00:00")
+
+# Verificación de horarios guardados
+>>> Horario.objects.all()
+<QuerySet [<Horario: Basquet - Lunes (21:00:00 a 00:00:00)>, <Horario: Basquet - Martes (21:00:00 a 00:00:00)>]>
+
+----------------------------------------------------------------------
+3. Crear y guardar al menos tres inscripciones asociadas a los horarios disponibles
+----------------------------------------------------------------------
+# Importación del modelo Inscripcion
+>>> from reservas.models import Inscripcion
+
+# Inscripción 1 (Basquet - Lunes)
+>>> inscripcion1= Inscripcion.objects.create(nombre="Judith", apellido="Escalante", dni=43243234, horario=horario1, estado="Activa")
+
+# Inscripción 2 (Basquet - Martes)
+>>> inscripcion2= Inscripcion.objects.create(nombre="Kira",apellido="Aguirre",dni=23123499, horario=horario2, estado="Activa")
+
+# Inscripción 3 (Basquet - Lunes)
+>>> inscripcion3=Inscripcion.objects.create(nombre="Ares",apellido="Quilmes",dni=23556899, horario=horario1, estado="Cancelada")
+
+# Verificación de inscripciones guardadas
+>>> Inscripcion.objects.all()
+<QuerySet [<Inscripcion: Judith>, <Inscripcion: Kira>, <Inscripcion: Ares>]>
+
+----------------------------------------------------------------------
+5. Consultar y mostrar los horarios correspondientes a una actividad deportiva determinada.
+----------------------------------------------------------------------
+>>> Horario.objects.filter(actividad__nombre="Basquet")
+<QuerySet [<Horario: Basquet - Lunes (21:00:00 a 00:00:00)>, <Horario: Basquet - Martes (21:00:00 a 00:00:00)>]>
+
+----------------------------------------------------------------------
+6. Filtrar y mostrar las inscripciones que se encuentren en estado Activa
+----------------------------------------------------------------------
+>>> Inscripcion.objects.filter(estado="Activa")
+<QuerySet [<Inscripcion: Judith>, <Inscripcion: Kira>]>
+
+----------------------------------------------------------------------
+7. Consultar las inscripciones correspondientes a un horario determinado
+----------------------------------------------------------------------
+>>> Inscripcion.objects.filter(horario__dia="Lunes")
+<QuerySet [<Inscripcion: Judith>, <Inscripcion: Ares>]>
+
+----------------------------------------------------------------------
+8. Modificar el cupo de una actividad deportiva
+----------------------------------------------------------------------
+>>> futbol = ActividadDeportiva.objects.get(nombre="Futbol")
+>>> futbol.cupo = 25
+>>> futbol.save()
+>>> futbol.cupo
+25
+
+----------------------------------------------------------------------
+9. Cambiar el estado de una inscripción de Activa a Cancelada
+----------------------------------------------------------------------
+>>> inscripcion = Inscripcion.objects.get(nombre="Judith")
+>>> inscripcion.estado = "Cancelada"
+>>> inscripcion.save()
+>>> inscripcion.estado
+'Cancelada'
+
+----------------------------------------------------------------------
+10. Eliminar una inscripción de la base de datos
+----------------------------------------------------------------------
+>>> ins_eliminar = Inscripcion.objects.get(nombre="Ares")
+>>> ins_eliminar.delete()
+(1, {'reservas.Inscripcion': 1})
+>>> Inscripcion.objects.all()
+<QuerySet [<Inscripcion: Judith>, <Inscripcion: Kira>]>
