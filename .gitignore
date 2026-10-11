@@ -130,3 +130,4 @@ celerybeat-schedule.dir
 # Base de datos SQLite de Django
 db.sqlite3
 *.sqlite3
+.idea/
